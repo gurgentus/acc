@@ -26,6 +26,9 @@ def pytest_runtest_makereport(item, call):
                     for c in ['car_in_front.svg', 'pedals.svg']:
                         view_html += "<td><img class='maneuver_graph' src='%s'/></td>" % (os.path.join(directory, c), )
                     view_html += "</tr>"
+                    for c in ['score.svg']:
+                        view_html += "<td><img class='maneuver_graph' src='%s'/></td>" % (os.path.join(directory, c), )
+                    view_html += "</tr>"
                     view_html += "</table>"
                     extra.append(pytest_html.extras.html(view_html))
             report.extra = extra

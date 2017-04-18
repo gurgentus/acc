@@ -200,6 +200,17 @@ class Visualizer(object):
         plt.grid()
         plt.savefig("/".join(['testplots', directory, 'pedals.svg']), dpi=1000)
 
+        # score
+        plt_num += 1
+        plt.figure(plt_num)
+        plt.plot(
+          self.t_values, self.score, 'b',
+        )
+        plt.xlabel('Time [s]')
+        plt.ylabel('Score')
+        plt.legend(['score'], loc=0)
+        plt.grid()
+        plt.savefig("/".join(['testplots', directory, 'score.svg']), dpi=1000)
 
         plt.close("all")
 
