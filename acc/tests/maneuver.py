@@ -90,7 +90,7 @@ class Maneuver(object):
         score = 0.
         prev_accel = 0.
         # TODO: calibrate this threshold to denote maximum discomfort allowed
-        score_threshold = 200.
+        score_threshold = 10.
         # TODO: calibrate this constant for scaling rate of acceleration
         accel_const = 1.
 
@@ -132,7 +132,9 @@ class Maneuver(object):
                                         acceleration=acceleration,
                                         car_in_front=car_in_front,
                                         gap=gap,
-                                        cruise_speed=cruise_speed)
+                                        cruise_speed=cruise_speed,
+                                        angle_steer=plant.angle_steer,
+                                        dt = plant.ts)
 
             if gas > 0:
                 # accelerating
