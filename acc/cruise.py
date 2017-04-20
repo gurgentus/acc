@@ -25,7 +25,6 @@ def control(speed=0, acceleration=0, car_in_front=200, gap=5, cruise_speed=None,
         # use safe following distance as a measure until cruise speed is reached again
         if delta_distance < 0:
             state['maintaining_distance'] = True
-            print("distance");
         elif speed >= cruise_speed:
             state['maintaining_distance'] = False
 
